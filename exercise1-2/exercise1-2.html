@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W7P1 - Exercise 1.2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.2</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Create a (very) basic theme selector that allows the user to select 
+                a background colour and a fill colour. Take a look at the expected output video 
+                below.
+            </p>
+            <p>Create a canvas in your preferred size. Draw a shape or some text on the canvas but don't 
+                set any colours yet.
+            </p>
+            <p>Add two colour pickers using the <a href="https://p5js.org/reference/p5/createColorPicker" target="_blank"><code>createColorPicker()</code></a> 
+            function. Refer to the documentation to find out what parameters the function expects. Don't forget to save both colour pickers to global variables.</p>
+            <p>The steps for positioning colour pickers are exactly the same as for buttons:
+            </p>
+            <ol>
+                <li>After the colour pickers are created and saved to global variables, select the <code>&lt;main&gt;</code> element. You only need to do this once per sketch:<br/>
+                <pre>const container = select("main");</pre></li>
+                <li>Make the <code>&lt;main&gt;</code> element the parent of both colour pickers (replace <code>colourPicker1</code> and <code>colourPicker2</code> with your variable names):<br/>
+                <pre>colourPicker1.parent(container);
+colourPicker2.parent(container);</pre></li>
+                <li>Position the colour pickers wherever you like:<br>
+                <pre>colourPicker1.position(0, 100);
+colourPicker2.position(width / 2, 100);</pre></li>
+            </ol>
+            <p>Finally, use the <a href="https://p5js.org/reference/p5.Element/value" target="_blank"><code>value()</code></a> method to get the currently selected 
+            colour of each colour picker and use them to set the background and fill colours of your sketch:</p>
+            <pre>background(colourPicker1.value());
+fill(colourPicker2.value());</pre>
+            <p>When you are finished, go to <a href="./check-exercise1-2.html">check-exercise1-2.html</a> to check your work.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="400" height="300" controls>
+                    <source src="./assets/exercise1-2.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You will find it helpful to have the examples from last lecture open as there are many similarities.</p>
+                    <p>You don't need to add an event listener to the colour pickers.</p>
+                    <p>You also don't need to match the layout in the video or add labels to the colour pickers (unless you want to 
+                        test your knowledge of drawing with text).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
